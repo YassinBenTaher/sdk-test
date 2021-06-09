@@ -1,5 +1,5 @@
 {
-    "name": "sdk/php-sdk",
+    "name": "bty/php-sdk",
     "description": "Composer php sdk",
     "type": "library",
     "authors": [
