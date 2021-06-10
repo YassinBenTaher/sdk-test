@@ -15,8 +15,7 @@
         "react/promise": "^2.8",
         "mashape/unirest-php": "dev-master",
         "guzzlehttp/guzzle": "^7.4@dev",
-        "jms/serializer": "^3.12@dev",
-        "minimum-stability": "dev"
+        "jms/serializer": "^3.12@dev"
     },
     "config": {
         "preferred-install": "dist",
