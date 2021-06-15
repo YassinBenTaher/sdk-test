@@ -11,7 +11,7 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.2.24",
+        "php": "^8.0.7",
         "php-http/curl-client": "^2.0@dev",
         "react/promise": "^2.8",
         "mashape/unirest-php": "dev-master",
@@ -22,7 +22,7 @@
     "config": {
         "preferred-install": "dist",
         "platform": {
-            "php": "7.4"
+            "php": "8.0.7"
         }
     },
     "autoload": {

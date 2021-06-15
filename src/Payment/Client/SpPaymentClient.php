@@ -10,9 +10,9 @@ require_once 'vendor/autoload.php';
 class SpPaymentClient implements ISpPaymentClient
 {
 
-    public $clientOptions;
+    public SpPaymentClientOptions $clientOptions;
 
-    function __construct( $ClientOptions) {
+    function __construct(SpPaymentClientOptions $ClientOptions) {
         $this->clientOptions = $ClientOptions;
     }
 
