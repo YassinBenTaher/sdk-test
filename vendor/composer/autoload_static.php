@@ -7,15 +7,17 @@ namespace Composer\Autoload;
 class ComposerStaticInit7f0adc2dbe5d99d78f355cf56e960e27
 {
     public static $files = array (
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
-        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+        '7dd996d98a91d095f100c75e0b9e2391' => __DIR__ . '/..' . '/spatie/async/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -23,7 +25,9 @@ class ComposerStaticInit7f0adc2dbe5d99d78f355cf56e960e27
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
+            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\OptionsResolver\\' => 34,
+            'Spatie\\Async\\' => 13,
         ),
         'R' => 
         array (
@@ -35,6 +39,10 @@ class ComposerStaticInit7f0adc2dbe5d99d78f355cf56e960e27
             'Psr\\Http\\Client\\' => 16,
             'Psr\\Cache\\' => 10,
             'PHPStan\\PhpDocParser\\' => 21,
+        ),
+        'O' => 
+        array (
+            'Opis\\Closure\\' => 13,
         ),
         'M' => 
         array (
@@ -80,9 +88,17 @@ class ComposerStaticInit7f0adc2dbe5d99d78f355cf56e960e27
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
         'Symfony\\Component\\OptionsResolver\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
+        'Spatie\\Async\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/async/src',
         ),
         'React\\Promise\\' => 
         array (
@@ -104,6 +120,10 @@ class ComposerStaticInit7f0adc2dbe5d99d78f355cf56e960e27
         'PHPStan\\PhpDocParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
+        'Opis\\Closure\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/opis/closure/src',
         ),
         'Metadata\\' => 
         array (

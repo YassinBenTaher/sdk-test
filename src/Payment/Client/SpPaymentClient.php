@@ -2,6 +2,7 @@
 
 
 namespace Payment\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use http\Client;
 use Payment\Models\Payment\Domestic\SpDomesticPayment;
 
@@ -17,30 +18,36 @@ class SpPaymentClient implements ISpPaymentClient
     }
 
 
-    public function CreateDomesticPayment( $payment)
+    /**
+     * @throws GuzzleException
+     */
+    public function CreateDomesticPayment($payment)
     {
         $client = new \GuzzleHttp\Client();
         $request = new \GuzzleHttp\Psr7\Request('POST', "{$this->clientOptions->baseUrl}/api/v1.0/payments/domestic/Create" ,
             $this->GetHeaders(), json_encode($payment));
-        $promise = $client->sendAsync($request);
-        $promise->wait();
-        return $promise;
+        return $client->send($request);
     }
+
+    /**
+     * @throws GuzzleException
+     */
     public function GetDomesticPayment(string $id)
     {
         $client = new \GuzzleHttp\Client();
         $request = new \GuzzleHttp\Psr7\Request('GET', "{$this->clientOptions->baseUrl}/api/v1.0/payments/domestic/Get?id=$id" , $this->GetHeaders());
-        $promise = $client->sendAsync($request);
-        $promise->wait();
-        return $promise;
+
+        return $client->send($request)->getBody();
     }
+
+    /**
+     * @throws GuzzleException
+     */
     public function ListDomesticPayment(int $start, int $perPage)
     {
         $client = new \GuzzleHttp\Client();
         $request = new \GuzzleHttp\Psr7\Request('GET', "{$this->clientOptions->baseUrl}/api/v1.0/payments/domestic/List?start=$start&perPage=$perPage" , $this->GetHeaders());
-        $promise = $client->sendAsync($request);
-        $promise->wait();
-        return $promise;
+        return $client->send($request);
     }
 
     private function GetHeaders(): array {

@@ -17,7 +17,8 @@
         "mashape/unirest-php": "dev-master",
         "guzzlehttp/guzzle": "^7.4@dev",
         "jms/serializer": "^3.12@dev",
-        "composer/installers": "~1.0"
+        "composer/installers": "~1.0",
+        "spatie/async": "dev-master"
     },
     "config": {
         "preferred-install": "dist",
