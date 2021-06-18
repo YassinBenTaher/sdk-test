@@ -18,7 +18,9 @@
         "guzzlehttp/guzzle": "^7.4@dev",
         "jms/serializer": "^3.12@dev",
         "composer/installers": "~1.0",
-        "spatie/async": "dev-master"
+        "spatie/async": "dev-master",
+        "symfony/serializer": "6.0.x-dev",
+        "symfony/property-access": "6.0.x-dev"
     },
     "config": {
         "preferred-install": "dist",
