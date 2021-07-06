@@ -9,11 +9,15 @@ class SpDomesticPayment
 {
     public  string $amount;
     public  string $description;
+    public  string $successUrl;
+    public  string $failUrl;
 
-    function __construct(int $Amount, string $Description)
+    function __construct(int $Amount, string $Description, string $SuccessUrl, string $FailUrl)
     {
         $this->amount = $Amount;
         $this->description = $Description;
+        $this->successUrl = $SuccessUrl;
+        $this->failUrl = $FailUrl;
     }
 
     /**
@@ -46,6 +50,38 @@ class SpDomesticPayment
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return Url
+     */
+    public function getSuccessUrl(): Url
+    {
+        return $this->successUrl;
+    }
+
+    /**
+     * @param Url $successUrl
+     */
+    public function setSuccessUrl(Url $successUrl): void
+    {
+        $this->successUrl = $successUrl;
+    }
+
+    /**
+     * @return Url
+     */
+    public function getFailUrl(): Url
+    {
+        return $this->failUrl;
+    }
+
+    /**
+     * @param Url $failUrl
+     */
+    public function setFailUrl(Url $failUrl): void
+    {
+        $this->failUrl = $failUrl;
     }
 
 }

@@ -18,6 +18,6 @@ $client = new \Payment\Client\SpPaymentClient(
 }); */
 
  $rep = $client->CreateDomesticPayment(new \Payment\Models\Payment\Domestic\SpDomesticPayment(
-    50, 'Test payment'
+    50, 'Test payment', 'https://surl.com', 'https://surl.com'
 ));
- print_r($rep);
+ print_r($rep['link']);
