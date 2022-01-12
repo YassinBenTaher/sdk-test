@@ -17,7 +17,7 @@ $client = new \Payment\Client\SpPaymentClient(
     echo $resp->getBody();
 }); */
 
- $rep = $client->CreateDomesticPayment(new \Payment\Models\Payment\Domestic\SpDomesticPayment(
+/* $rep = $client->CreateDomesticPayment(new \Payment\Models\Payment\Domestic\SpDomesticPayment(
     50, 'Test payment'
 ));
- print_r($rep);
+ print_r($rep); */

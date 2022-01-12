@@ -17,10 +17,12 @@
         "mashape/unirest-php": "dev-master",
         "guzzlehttp/guzzle": "^7.4@dev",
         "jms/serializer": "^3.12@dev",
-        "composer/installers": "~1.0",
-        "spatie/async": "dev-master",
+        "starkbank/ecdsa": "dev-master",
+        "querdos/php-ecdh": "dev-master",
+        "simplito/elliptic-php": "1.0.7",
         "symfony/serializer": "6.0.x-dev",
-        "symfony/property-access": "6.0.x-dev"
+        "symfony/property-access": "6.0.x-dev",
+        "paragonie/easy-ecc": "dev-master"
     },
     "config": {
         "preferred-install": "dist",
@@ -30,6 +32,7 @@
     },
     "autoload": {
         "psr-0": {
+            "Helpers": "src/",
             "Payment": "src/"
         }
     }
