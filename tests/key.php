@@ -38,23 +38,24 @@ print_r($sig);
 $ver = $signature->Verify($data, $publicKey, $sig);
 print_r($ver); */
 
-$prKey = '-----BEGIN EC PRIVATE KEY-----
-MHQCAQEEIFTZon9Gp5j+eWmOA8rJ63Jc80Vn8ij8U3ptUjxxWXp/oAcGBSuBBAAK
-oUQDQgAEZX9A5RlQVpK3F3V94py/S8ii8Hkd/VT7CpQt4rrK+had5Gwj+fSWY04J
-jnd5Lz9PyLeuYyOzT1NZ5CgRVrO/vA==
------END EC PRIVATE KEY-----';
+$prKey = '-----BEGIN PRIVATE KEY-----
+MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgpIs8tj7kiNV6A8+j
+V7+7gWp/IfY2wJpwjxTU6FvzEk+hRANCAARpJ80jUMvH4V1Os77NGdZ3HEBMd9jg
+wwooy5l/h2MEuL8a18URu3HpLBV95/GA8LhmobcTOPAF9FrEx8UPqSpH
+-----END PRIVATE KEY-----';
 
 $pubKey = '-----BEGIN PUBLIC KEY-----
-MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEZX9A5RlQVpK3F3V94py/S8ii8Hkd/VT7
-CpQt4rrK+had5Gwj+fSWY04Jjnd5Lz9PyLeuYyOzT1NZ5CgRVrO/vA==
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaSfNI1DLx+FdTrO+zRnWdxxATHfY
+4MMKKMuZf4djBLi/GtfFEbtx6SwVfefxgPC4ZqG3EzjwBfRaxMfFD6kqRw==
 -----END PUBLIC KEY-----';
 
 $list = new SpCrypto();
 // print_r($list->GenerateKeyPair());
 
 $signature = new EccSignatureManager();
-$data = "try to sign message";
-
+$arr = array('amount' => strval(50 + 0), 'description' => 'Test payment');
+$data = json_encode($arr);
+print_r($data);
 $sig = $signature->Sign($data, $prKey);
 print_r($sig);
 
