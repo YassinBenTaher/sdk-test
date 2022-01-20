@@ -20,9 +20,22 @@ $client = new \Payment\Client\SpPaymentClient(
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {
 }  */
 
+$serKey = "-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZergpIl9cU89g/iV97ZLPSyPc7S3
+Z5l3yXTuHXDTOnFwhHr/Pep8UFOl26Gbjxf0I84MjJFsqNsmUSfjdZTr7Q==
+-----END PUBLIC KEY-----";
+
 $payment = new \Payment\Models\Payment\Domestic\SpDomesticPayment(
-    50, 'Test payment'
+    50.55, 'Test payment'
 );
-print_r(json_encode($payment));
-$rep = $client->CreateDomesticPayment($payment, 'MEUCIQC2uZ4wWIEiWfrrDkE8GtmDOP2vvTr7Sf7WQkP2r/m1OgIgRD2eBc3KLYndbVMLUeSWwS59lB7o8CxVK4gRsuZoYRo=');
+print_r($payment);
+
+$rep = $client->CreateDomesticPayment($payment, 'MEUCIQCcGogWLyj1y3ixDOd+t5Vm6lHqUEFa3DTjFBPwohGjLgIgCR51AGpLfFGLzQ2p5pIyU2BQ7mIzpvu71iTezKU/3So=');
 print_r($rep);
+
+$signature = new \Helpers\Security\DigitalSignature\EccSignatureManager();
+$ser = new \Helpers\Security\DigitalSignature\serializer();
+$data = $ser->Serialise($rep->getPayment());
+
+$ver = $signature->Verify($data, $rep->getSignature(), $serKey);
+var_dump($ver);

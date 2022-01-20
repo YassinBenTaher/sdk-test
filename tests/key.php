@@ -25,7 +25,7 @@ $list = new SpCrypto();
 print_r($list->GenerateKeyPair());
 
 $signature = new EccSignatureManager();
-$arr = array('amount' => strval(50 + 0), 'description' => 'Test payment');
+$arr = array('amount' => strval(50.55 + 0), 'description' => 'Test payment');
 $data = json_encode($arr);
 print_r($data);
 $sig = $signature->Sign($data, $prKey);
